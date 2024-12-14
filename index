@@ -1,0 +1,94 @@
+ private void luas(Scanner sc) {
+        while (true) {
+            System.out.println("Silahkan Pilih Menu:");
+            System.out.println(" 1. Persegi Panjang");
+            System.out.println(" 2. Persegi");
+            System.out.println(" 3. Segitiga");
+            System.out.println(" 4. Lingkaran");
+            System.out.println(" 5. Exit");
+            int pilihan = sc.nextInt();
+            if (pilihan == 5) break;
+
+            switch (pilihan) {
+                case 1 -> hitungLuasPersegiPanjang(sc);
+                case 2 -> hitungLuasPersegi(sc);
+                case 3 -> hitungLuasSegitiga(sc);
+                case 4 -> hitungLuasLingkaran(sc);
+                default -> System.out.println("Pilihan tidak valid!");
+            }
+        }
+    }
+
+    private void hitungLuasPersegiPanjang(Scanner sc) {
+        System.out.print("Masukkan panjang: ");
+        double panjang = sc.nextDouble();
+        System.out.print("Masukkan lebar: ");
+        double lebar = sc.nextDouble();
+        System.out.println("Luas Persegi Panjang: " + (panjang * lebar));
+    }
+
+    private void hitungLuasPersegi(Scanner sc) {
+        System.out.print("Masukkan sisi: ");
+        double sisi = sc.nextDouble();
+        System.out.println("Luas Persegi: " + (sisi * sisi));
+    }
+
+    private void hitungLuasSegitiga(Scanner sc) {
+        System.out.print("Masukkan alas: ");
+        double alas = sc.nextDouble();
+        System.out.print("Masukkan tinggi: ");
+        double tinggi = sc.nextDouble();
+        System.out.println("Luas Segitiga: " + (0.5 * alas * tinggi));
+    }
+
+    private void hitungLuasLingkaran(Scanner sc) {
+        System.out.print("Masukkan jari-jari: ");
+        double jariJari = sc.nextDouble();
+        System.out.println("Luas Lingkaran: " + (Math.PI * jariJari * jariJari));
+    }
+
+    private void volume(Scanner sc) {
+        while (true) {
+            System.out.println("Pilihan Menu:");
+            System.out.println(" 1. Balok");
+            System.out.println(" 2. Kubus");
+            System.out.println(" 3. Bola");
+            System.out.println(" 4. Exit");
+            int pilihan = sc.nextInt();
+            if (pilihan == 4) break;
+
+            switch (pilihan) {
+                case 1 -> hitungVolumeBalok(sc);
+                case 2 -> hitungVolumeKubus(sc);
+                case 3 -> hitungVolumeBola(sc);
+                default -> System.out.println("Pilihan tidak valid!");
+            }
+        }
+    }
+
+    private void hitungVolumeBalok(Scanner sc) {
+        System.out.print("Masukkan panjang: ");
+        double panjang = sc.nextDouble();
+        System.out.print("Masukkan lebar: ");
+        double lebar = sc.nextDouble();
+        System.out.print("Masukkan tinggi: ");
+        double tinggi = sc.nextDouble();
+        System.out.println("Volume Balok: " + (panjang * lebar * tinggi));
+    }
+
+    private void hitungVolumeKubus(Scanner sc) {
+        System.out.print("Masukkan sisi: ");
+        double sisi = sc.nextDouble();
+        System.out.println("Volume Kubus: " + (Math.pow(sisi, 3)));
+    }
+
+    private void hitungVolumeBola(Scanner sc) {
+        System.out.print("Masukkan jari-jari: ");
+        double jariJari = sc.nextDouble();
+        System.out.println("Volume Bola: " + ((4.0/3.0) * Math.PI * Math.pow(jariJari, 3)));
+    }
+
+    public static void main(String[] args) {
+        new MenuExample().showMenu();
+    }
+}
